@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Товари</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h2> FreshMarket</h2>
+    <nav>
+        <a href="/">Головна</a>
+        <a href="/cart">Кошик</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Каталог товарів</h1>
+
+    <div class="products">
+        <div class="product">
+            <h3> Яблука</h3>
+            <p>30 грн / кг</p>
+            <button>Додати в кошик</button>
+        </div>
+
+        <div class="product">
+            <h3>🥛 Молоко</h3>
+            <p>25 грн</p>
+            <button>Додати в кошик</button>
+        </div>
+
+        <div class="product">
+            <h3>🥖 Хліб</h3>
+            <p>20 грн</p>
+            <button>Додати в кошик</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 FreshMarket
+</footer>
+
+</body>
+</html>
