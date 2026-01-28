@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ title or "FreshMarket" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="logo"></span>
+        <span>FreshMarket</span>
+        <span class="badge">🥦 Grocery Store</span>
+      </a>
+
+      <div class="search" title="Пошук — демо (без бази даних)">
+        <span style="opacity:.8">🔎</span>
+        <input placeholder="Пошук товарів (демо)..." />
+      </div>
+
+      <div class="nav-links">
+        <a class="btn btn-ghost" href="/">Головна</a>
+        <a class="btn btn-ghost" href="/products">Товари</a>
+        <a class="btn btn-ghost" href="/cart">Кошик</a>
+        <a class="btn btn-primary" href="/checkout">Оформити</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+
+  </main>
+
+</body>
+</html>

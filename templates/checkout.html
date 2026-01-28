@@ -1,6 +1,31 @@
-<h2>Оформлення замовлення</h2>
-<form>
-    <input placeholder="Імʼя"><br>
-    <input placeholder="Адреса"><br>
-    <button>Замовити</button>
-</form>
+{% extends "base.html" %}
+{% set title = "Оформлення — FreshMarket" %}
+
+{% block content %}
+<div class="panel">
+  <div class="panel-inner">
+    <span class="badge">✅ Checkout</span>
+    <h1 class="h1" style="font-size:34px">Оформлення замовлення</h1>
+    <p class="p">Заповніть дані — це демонстраційна форма для проєкту.</p>
+
+    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap:12px; margin-top:14px;">
+      <div style="grid-column: span 6" class="search"><span>👤</span><input placeholder="Ім’я та прізвище"/></div>
+      <div style="grid-column: span 6" class="search"><span>📞</span><input placeholder="Телефон"/></div>
+      <div style="grid-column: span 12" class="search"><span>📍</span><input placeholder="Адреса доставки"/></div>
+      <div style="grid-column: span 12" class="search"><span>📝</span><input placeholder="Коментар (необов’язково)"/></div>
+    </div>
+
+    <div style="margin-top:14px" class="notice">
+      <div style="font-size:20px">🔒</div>
+      <div>
+        <b>Безпечна оплата (демо):</b> у навчальному проєкті платіж не виконується, лише інтерфейс.
+      </div>
+    </div>
+
+    <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="btn" href="/cart">← Назад до кошика</a>
+      <button class="btn btn-primary" type="button">Підтвердити замовлення</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

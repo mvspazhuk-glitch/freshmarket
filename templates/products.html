@@ -1,47 +1,86 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>Товари</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% set title = "Каталог — FreshMarket" %}
 
-<header>
-    <h2> FreshMarket</h2>
-    <nav>
-        <a href="/">Головна</a>
-        <a href="/cart">Кошик</a>
-    </nav>
-</header>
-
-<div class="container">
-    <h1>Каталог товарів</h1>
-
-    <div class="products">
-        <div class="product">
-            <h3> Яблука</h3>
-            <p>30 грн / кг</p>
-            <button>Додати в кошик</button>
-        </div>
-
-        <div class="product">
-            <h3>🥛 Молоко</h3>
-            <p>25 грн</p>
-            <button>Додати в кошик</button>
-        </div>
-
-        <div class="product">
-            <h3>🥖 Хліб</h3>
-            <p>20 грн</p>
-            <button>Додати в кошик</button>
-        </div>
-    </div>
+{% block content %}
+<div class="panel">
+  <div class="panel-inner">
+    <span class="badge">🛒 Каталог</span>
+    <h1 class="h1" style="font-size:34px">Товари</h1>
+    <p class="p">Демо-каталог. Кнопки “Додати” — для UI (наступним кроком зробимо реальний кошик).</p>
+  </div>
 </div>
 
-<footer>
-    © 2026 FreshMarket
-</footer>
+<div style="margin-top:18px" class="grid cards">
+  <div class="card">
+    <div class="card-top">
+      <h3>🍎 Яблука “Гала”</h3>
+      <span class="tag">Фрукти</span>
+    </div>
+    <p class="desc">Соковиті, солодкі. Ідеальні для перекусу та пирогів.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">30 грн <span class="strike">35</span></div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
 
-</body>
-</html>
+  <div class="card">
+    <div class="card-top">
+      <h3>🥛 Молоко 2.5%</h3>
+      <span class="tag">Молочне</span>
+    </div>
+    <p class="desc">Свіже пастеризоване молоко, 1 л.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">25 грн</div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>🥖 Хліб пшеничний</h3>
+      <span class="tag">Випічка</span>
+    </div>
+    <p class="desc">М’який, ароматний, 450 г. Свіжий зранку.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">20 грн</div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>🥦 Броколі</h3>
+      <span class="tag">Овочі</span>
+    </div>
+    <p class="desc">Корисна та свіжа. Підходить для салатів і гарнірів.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">45 грн</div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>🍫 Шоколад чорний</h3>
+      <span class="tag">Бакалія</span>
+    </div>
+    <p class="desc">70% какао. Для десертів і кави.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">38 грн</div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>🥚 Яйця (10 шт)</h3>
+      <span class="tag">Молочне</span>
+    </div>
+    <p class="desc">Домашні, свіжі. Ідеальні для сніданку.</p>
+    <div class="card-top" style="align-items:center">
+      <div class="price">52 грн</div>
+      <button class="btn btn-primary" type="button">Додати</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

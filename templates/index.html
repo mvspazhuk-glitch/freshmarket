@@ -1,29 +1,64 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>FreshMarket</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% set title = "FreshMarket — Свіжі продукти онлайн" %}
 
-<header>
-    <h2>🥦 FreshMarket</h2>
-    <nav>
-        <a href="/">Головна</a>
-        <a href="/products">Товари</a>
-        <a href="/cart">Кошик</a>
-    </nav>
-</header>
+{% block content %}
+<div class="hero">
+  <div class="panel">
+    <div class="panel-inner">
+      <span class="badge">🚚 Доставка 30–60 хв</span>
+      <h1 class="h1">Свіжі продукти<br/>прямо до дверей</h1>
+      <p class="p">
+        Обирайте фрукти, овочі, молочні та бакалію. Зручний каталог, кошик і оформлення замовлення.
+      </p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="/products">Перейти до каталогу →</a>
+        <a class="btn" href="/cart">Переглянути кошик</a>
+      </div>
 
-<div class="container">
-    <h1>Свіжі продукти прямо до вашого дому</h1>
-    <p>Замовляйте фрукти, овочі та молочні продукти онлайн</p>
+      <div class="kpis">
+        <div class="kpi"><b>4.9/5</b><span>оцінка сервісу</span></div>
+        <div class="kpi"><b>1200+</b><span>замовлень/місяць</span></div>
+        <div class="kpi"><b>Свіжість</b><span>перевіряємо якість</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-inner">
+
+      <div class="badge">🔥 Популярне сьогодні</div>
+      <div style="margin-top:12px" class="grid">
+        <div class="kpi"><b>🍓 Ягоди</b><span>знижка -10%</span></div>
+        <div class="kpi"><b>🥛 Молочне</b><span>2+1 акція</span></div>
+        <div class="kpi"><b>🥖 Випічка</b><span>свіже зранку</span></div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<footer>
-    © 2026 FreshMarket
-</footer>
+<div style="margin-top:18px" class="grid cards">
+  <div class="card">
+    <div class="card-top">
+      <h3>✅ Чистий дизайн</h3>
+      <span class="tag">UI</span>
+    </div>
+    <p class="desc">Єдина стилістика, адаптивність, сучасні картки, гарна типографіка.</p>
+  </div>
 
-</body>
-</html>
+  <div class="card">
+    <div class="card-top">
+      <h3>⚡ Швидкий деплой</h3>
+      <span class="tag">Cloud</span>
+    </div>
+    <p class="desc">GitHub → Railway. Будь-які зміни пушиш — сайт оновлюється автоматично.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>🧠 Простий backend</h3>
+      <span class="tag">Flask</span>
+    </div>
+    <p class="desc">Маршрути: /, /products, /cart, /checkout. Чітка структура templates/static.</p>
+  </div>
+</div>
+{% endblock %}
